@@ -14,6 +14,8 @@ Estructura del Proyecto
     "scripts": [
       "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ]
+    Instalar sweetalert
+    npm install sweetalert2
 
 2. Definir las Interfaces:
 
@@ -55,18 +57,25 @@ Estructura del Proyecto
     ng g c components/blog --skip-tests
 
     Componentes Específicos
-    ng g c components/blog/formPost --skip-tests
-    ng g c components/blog/postList --skip-tests
-    ng g c components/blog/postItem --skip-tests
-    ng g c components/blog/viewPost --skip-tests
+    ng g c components/header --skip-tests
+    ng g c components/footer --skip-tests
+    ng g c components/formPost --skip-tests
+    ng g c components/postItem --skip-tests
+    Componentes Pagina
+    ng g c pages/postList --skip-tests
+    ng g c pages/postView --skip-tests
+    ng g c pages/registo --skip-tests
+    ng g c pages/login --skip-tests
 
 5. Rutas de la Aplicación:
 
     Configurar en app-routing.module.ts
     const routes: Routes = [
-      { path: 'home', component: BlogComponent },
+      { path: 'home', component: PostViewComponent },
       { path: 'new', component: FormPostComponent },
       { path: 'post/:idpost', component: ViewPostComponent },
+      { path: 'registro', component: RegistoComponent },
+      { path: 'login', component: LoginComponent },
       { path: '**', redirectTo: 'home' }
     ];
 
