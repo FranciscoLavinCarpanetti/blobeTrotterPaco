@@ -8,3 +8,7 @@ i {
   color: rgb(210, 231, 21);
   font-size: 1.8rem;
 }
+.active {
+  font-weight: bold;
+}
+

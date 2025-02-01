@@ -1,17 +1,15 @@
 <nav class="navbar navbar-expand-lg custom-navbar bg-dark border-bottom border-4 border-warning shadow">
   <div class="container-fluid">
-    <a class="navbar-brand fs-1 text-warning fw-bold" href="#">GlobeTrotterPaco</a>
+    <a class="navbar-brand fs-1 text-warning fw-bold" [routerLink]="['/home']">GlobeTrotterPaco</a>
     <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <a class="nav-link active text-warning fw-bold" href="#">Home</a>
-        <a class="nav-link text-light" href="#">Post</a>
-        <a class="nav-link text-light" href="#">New Post</a>
-        <a class="nav-link text-secondary disabled" aria-disabled="true">
-          <i class="fa-solid fa-user"></i> Login
-        </a>
+        <a class="nav-link active text-warning fw-bold" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+        <a class="nav-link text-light" routerLinkActive="active" [routerLink]="['/post/:id']">Post</a>
+        <a class="nav-link text-light" routerLinkActive="active" [routerLink]="['/new']">New Post</a>
+        <a class="nav-link text-light" routerLinkActive="active" [routerLink]="['/login']">Login</a>
       </div>
     </div>
   </div>
