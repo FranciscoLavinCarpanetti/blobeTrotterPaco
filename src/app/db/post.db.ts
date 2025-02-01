@@ -100,7 +100,7 @@ export const POSTS: IPost[] = [
     author: 'David Suárez',
     image: 'https://www.guiajando.com/wp-content/uploads/2024/01/trajes-carnaval-de-venecia-1024x683.jpg',
     date: '2024-02-10',
-    category: 'Festivales'
+    category: ICategory.Festivales
   },
   {
     id: 16,
@@ -109,7 +109,7 @@ export const POSTS: IPost[] = [
     author: 'Elena Martínez',
     image: 'https://arenatours.com/wp-content/uploads/2022/03/smile-bridge-woman-resort-bungalow-1.jpg',
     date: '2024-03-15',
-    category: 'Playa'
+    category: ICategory.Playa
   },
   {
     id: 17,
@@ -118,7 +118,7 @@ export const POSTS: IPost[] = [
     author: 'Roberto Gómez',
     image: 'https://www.manasluadventures.com/wp-content/uploads/2023/07/preparing-to-climb-mount-kilimanjaro-main-banner.jpg',
     date: '2024-07-22',
-    category: 'Montaña'
+    category: ICategory.Montaña
   },
   {
     id: 18,
@@ -127,7 +127,7 @@ export const POSTS: IPost[] = [
     author: 'Laura Sánchez',
     image: 'https://i0.wp.com/sivarita.es/wp-content/uploads/2018/12/fushimi-inari-2_kioto_sivarita.png?fit=600%2C337&ssl=1',
     date: '2024-06-18',
-    category: 'Ciudad'
+    category: ICategory.Ciudad
   },
   {
     id: 19,
@@ -136,7 +136,7 @@ export const POSTS: IPost[] = [
     author: 'Pedro Ramírez',
     image: 'https://www.fijet.es/wp-content/uploads/2020/11/bici-provenza-bicicleta-768x507.jpg',
     date: '2024-08-05',
-    category: 'Rural'
+    category: ICategory.Rural
   },
   {
     id: 20,
@@ -145,6 +145,6 @@ export const POSTS: IPost[] = [
     author: 'Mariana Pérez',
     image: 'https://media.cnn.com/api/v1/images/stellar/prod/dia-de-muertos-mexico-digi-00-00-25-07-still002.jpg?c=original',
     date: '2024-11-02',
-    category: 'Festivales'
+    category: ICategory.Festivales
   }
 ];
