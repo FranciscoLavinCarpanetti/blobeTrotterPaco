@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-3 m-3 mb-5">
   <h1>Completa el formulario.</h1>
   <hr>
   <div class="col-12 col-lg-6 offset-0 offset-lg-3 bg-warning">
@@ -17,20 +17,23 @@
       </div>
       <div class="mb-3">
         <label for="image" class="form-label">Imagen</label>
-        <input type="image" id="image" class="form-control" formControlName="image" placeholder="Introduce una imagen que represente tu post">
+        <input type="text" id="image" class="form-control" formControlName="image" placeholder="Introduce una imagen que represente tu post">
       </div>
       <div class="mb-3">
         <label for="date" class="form-label">Fecha</label>
         <input type="text" id="date" class="form-control" formControlName="date" placeholder="Introduce la fecha de tu post">
       </div>
       <div class="mb-3">
-        <select for="salario" class="form-label">Selecciona una categoria para tu post</select>
-        <option class="form-control" formControlName="category" placeholder="Introduce la categoria de tu post">
-          <option value="0">Comida</option>
-          <option value="1">Viajes</option>
-        <option value="1">Viajes</option>
+        <label for="category" class="form-label">Selecciona una categoría para tu post</label>
+        <select id="category" class="form-control" formControlName="category">
+          <option value="Playa">Playa</option>
+          <option value="Montaña">Montaña</option>
+          <option value="Ciudad">Ciudad</option>
+          <option value="Rural">Rural</option>
+          <option value="Festival">Festival</option>
+        </select>
       </div>
-      <button type="submit" class="btn btn-info">Enviar</button>
+      <button type="submit" class="btn btn-info mb-2">Enviar</button>
     </form>
   </div>
 </div>
