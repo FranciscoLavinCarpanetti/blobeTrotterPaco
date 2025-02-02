@@ -8,7 +8,6 @@ import { POSTS } from '../db/post.db';
 export class PostsService {
   private posts: IPost[] = POSTS;
 
-
   getAll(): IPost[] {
     return this.posts;
   }
@@ -25,4 +24,7 @@ export class PostsService {
     return this.posts.find(post => post.id === id);
   }
 
+  createPost(post: IPost): void {
+    this.posts.push(post);
+  }
 }
