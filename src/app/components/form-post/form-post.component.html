@@ -1,1 +1,36 @@
-<p>form-post works!</p>
+<div class="row">
+  <h1>Completa el formulario.</h1>
+  <hr>
+  <div class="col-12 col-lg-6 offset-0 offset-lg-3 bg-warning">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Titulo</label>
+        <input type="text" id="title" class="form-control" formControlName="title" placeholder="Introduce un titulo para tu post">
+      </div>
+      <div class="mb-3">
+        <label for="text" class="form-label">Cuenta como fue tu viaje</label>
+        <input type="text" id="text" class="form-control" formControlName="text" placeholder="Introduce una discripción de tu viaje no superior de 200 caracteres">
+      </div>
+      <div class="mb-3">
+        <label for="autor" class="form-label">Nombres y Apellidos</label>
+        <input type="autor" id="autor" class="form-control" formControlName="autor" placeholder="Introduce tu nombre y apellido">
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Imagen</label>
+        <input type="image" id="image" class="form-control" formControlName="image" placeholder="Introduce una imagen que represente tu post">
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Fecha</label>
+        <input type="text" id="date" class="form-control" formControlName="date" placeholder="Introduce la fecha de tu post">
+      </div>
+      <div class="mb-3">
+        <select for="salario" class="form-label">Selecciona una categoria para tu post</select>
+        <option class="form-control" formControlName="category" placeholder="Introduce la categoria de tu post">
+          <option value="0">Comida</option>
+          <option value="1">Viajes</option>
+        <option value="1">Viajes</option>
+      </div>
+      <button type="submit" class="btn btn-info">Enviar</button>
+    </form>
+  </div>
+</div>
