@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { IPost } from '../interfaces/ipost.interface';
 import { POSTS } from '../db/post.db';
@@ -27,4 +28,8 @@ export class PostsService {
   createPost(post: IPost): void {
     this.posts.push(post);
   }
+
+
+
+
 }
