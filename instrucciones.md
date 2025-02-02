@@ -54,7 +54,7 @@ Estructura del Proyecto
 4. Crear Componentes Necesarios:
 
     Componente Principal
-    ng g c components/blog --skip-tests
+    ng g c components/component --skip-tests
 
     Componentes Específicos
     ng g c components/header --skip-tests
@@ -81,7 +81,7 @@ Estructura del Proyecto
 
 6. Funcionalidades Clave:
 
-    Listar todas las publicaciones desde postsService en BlogComponent.
+    Listar todas las publicaciones desde postsService en PostComponent.
 
     Formulario reactivo en FormPostComponent para agregar posts con validaciones.
 
