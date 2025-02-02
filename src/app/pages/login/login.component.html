@@ -1,12 +1,17 @@
- <div class="container">
-   <div class="row">
-    <div class="col-12 col-md-6">
+<div class="container">
+  <div class="row mt-5 ">
+    <div class="col-12 col-lg-6 offset-0 offset-lg-3 bg-warning p-3 shadow">
+      <app-registro></app-registro>
 
-     <app-registro></app-registro>
-
-
-     <p>login works!</p>
-
+      <form [formGroup]="loginForm" (ngSubmit)="getLogin()">
+        <div class="mb-3 ">
+          <input type="email" placeholder="Introduce un email" class="form-control" formControlName="email">
+        </div>
+        <div class="mb-3">
+          <input type="password" placeholder="Introduce contraseña" class="form-control" formControlName="password">
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+      </form>
     </div>
-   </div>
+  </div>
 </div>
