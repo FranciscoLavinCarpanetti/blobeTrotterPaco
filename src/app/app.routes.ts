@@ -10,10 +10,10 @@ export const routes: Routes = [
   { path: 'home', component: PostListComponent },
   { path: 'new', component: FormPostComponent },
   {
-    path: 'post', component: PostListComponent,
+    path: 'post', component: PostViewComponent,
     children: [{
       path: ':id',
-      component: PostViewComponent
+      component: PostListComponent
     }]
   },
   { path: 'registro', component: RegistroComponent },
