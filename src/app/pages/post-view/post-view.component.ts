@@ -1,28 +1,30 @@
-import { IPost } from './../../interfaces/ipost.interface';
-import { PostsService } from './../../services/posts.service';
-import { Component, inject, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-
-
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { IPost } from '../../interfaces/ipost.interface';
+import { PostsService } from '../../services/posts.service';
 @Component({
   selector: 'app-post-view',
-  imports: [RouterLink],
   templateUrl: './post-view.component.html',
-  styleUrl: './post-view.component.css'
+  styleUrls: ['./post-view.component.css'],
+  imports: [RouterLink]
 })
 export class PostViewComponent {
-  @Input() idPost: string = '';
-  PostsService = inject(PostsService)
-  router = inject(Router)
-  usuario!: IPost;
+  ipostData!: IPost;
+  private postsService = inject(PostsService);
+  private activatedRoute = inject(ActivatedRoute);
+  private router = inject(Router);
 
-
-
-
-
-  selectPost(id: number) {
-    this.router.navigate(['/post', id])
+  ngOnInit() {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (id) {
+      const response = this.postsService.getById(Number(id));
+      if (response) {
+        this.ipostData = response;
+      } else {
+        this.router.navigate(['/home']);
+      }
+    } else {
+      this.router.navigate(['/home']);
+    }
   }
-
 }
-
