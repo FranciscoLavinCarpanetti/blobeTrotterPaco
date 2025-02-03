@@ -1,6 +1,6 @@
+import { IPost } from './../../interfaces/ipost.interface';
 import { PostsService } from './../../services/posts.service';
-import { Component, inject } from '@angular/core';
-import { IPost } from '../../interfaces/ipost.interface';
+import { Component, inject, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -12,15 +12,10 @@ import { RouterLink } from '@angular/router';
 export class PostListComponent {
   arrposts: IPost[] = [];
   PostsService = inject(PostsService)
-
-
-
+  @Input() IPost!: IPost
 
   ngOnInit() {
     this.arrposts = this.PostsService.getAll()
   }
-
-
-
 
 }
