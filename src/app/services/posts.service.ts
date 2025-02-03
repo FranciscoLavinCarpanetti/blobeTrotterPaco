@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { IPost } from '../interfaces/ipost.interface';
 import { POSTS } from '../db/post.db';
@@ -22,7 +21,7 @@ export class PostsService {
   }
 
   getById(id: number): IPost | undefined {
-    return this.posts.find(post => post.id === id);
+    return this.posts.find((post: IPost) => post.id === id);
   }
 
   createPost(post: IPost): void {

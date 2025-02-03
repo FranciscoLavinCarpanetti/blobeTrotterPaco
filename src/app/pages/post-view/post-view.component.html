@@ -1,28 +1,22 @@
-<!--<section class="container my-3">
+<section class="container my-3" if="ipostData">
   <div class="card">
-    <div class="row">
-        <div class="card" style="width: 18rem;">
-          <figure class="figure col-12 col-md-4 p-4">
-            <img [src]="post.image" [alt]="post.title" class="card-img-top">>
-            <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
-          </figure>
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul> -->
-          <div class="card-body">
-            <button class="btn btn-outline-warning shadow" [routerLink]="['/post']">Volver a Post</button>
-          </div>
-
-
-
-
-
+    <div class="card-body">
+       <figure>
+          <img [src]="ipostData.image" [alt]="ipostData.title" class="card-img-top">
+       </figure>
+         <h5 class="card-title">{{ ipostData.title }}</h5>
+            <p class="card-text">{{ ipostData.text }}</p>
+    </div>
+       <ul class="list-group list-group-flush">
+          <li class="list-group-item">Autor: <strong>{{ ipostData.author }}</strong></li>
+          <li class="list-group-item">Fecha de post: {{ ipostData.date }}</li>
+          <li class="list-group-item">Categoría: <strong>{{ ipostData.category }}</strong></li>
+       </ul>
+    <div class="card-body">
+         <button class="btn btn-outline-warning shadow" [routerLink]="['/home']">Volver</button>
+    </div>
+  </div>
+</section>
 
 
 
