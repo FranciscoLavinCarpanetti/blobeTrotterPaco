@@ -27,7 +27,9 @@ export class PostsService {
   createPost(post: IPost): void {
     this.posts.push(post);
   }
-
+  getList(): string[] {
+    return this.posts.map(post => post.category);
+  }
 
 
 

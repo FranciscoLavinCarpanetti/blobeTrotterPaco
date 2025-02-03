@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NameSerchComponent } from '../name-serch/name-serch.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NameSerchComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
