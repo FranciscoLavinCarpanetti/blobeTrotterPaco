@@ -61,6 +61,9 @@ Estructura del Proyecto
     ng g c components/footer --skip-tests
     ng g c components/formPost --skip-tests
     ng g c components/postItem --skip-tests
+    ng g c components/nameSerch --skip-tests
+    ng g c components/selectTipo --skip-tests
+
     Componentes Pagina
     ng g c pages/postList --skip-tests
     ng g c pages/postView --skip-tests
