@@ -2,7 +2,7 @@ import { ICategory } from './../interfaces/icategory.interface';
 import { IPost } from "../interfaces/ipost.interface"
 
 
-export const POSTS: IPost[] = [
+export let POSTS: IPost[] = [
   {
     id: 1,
     title: 'Paraíso en Maldivas',
