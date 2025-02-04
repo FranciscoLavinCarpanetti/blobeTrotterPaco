@@ -12,9 +12,9 @@ export class PostsService {
     return this.posts;
   }
 
-  insert(post: IPost): void {
-    this.posts.push(post);
-  }
+  //insert(post: IPost): void {
+  // this.posts.push(post);
+  //}
 
   getByCategory(category: string): IPost[] {
     return this.posts.filter(post => post.category === category);
@@ -25,7 +25,7 @@ export class PostsService {
   }
 
   createPost(post: IPost): void {
-    this.posts.push(post);
+    POSTS.push(post);
   }
   getList(): string[] {
     return this.posts.map(post => post.category);
