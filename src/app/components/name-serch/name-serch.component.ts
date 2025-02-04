@@ -1,21 +1,22 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-name-serch',
-  imports: [ReactiveFormsModule],
+  selector: 'app-name-search', // Corregido el selector
   templateUrl: './name-serch.component.html',
-  styleUrl: './name-serch.component.css'
+  styleUrls: ['./name-serch.component.css']
 })
 export class NameSerchComponent {
-  @Output() BusquedaEmitida: EventEmitter<string> = new EventEmitter<string>()
+  @Output() BusquedaEmitida: EventEmitter<string> = new EventEmitter<string>();
+
   nameForm: FormGroup = new FormGroup({
-    name: new FormControl("", [])
+    name: new FormControl("", [Validators.required]) // Se añadió validación para evitar búsquedas vacías
   });
 
   getName() {
-    this.BusquedaEmitida.emit(this.nameForm.value.name);
-    this.nameForm.reset();
+    if (this.nameForm.valid) { // Solo emite si el formulario es válido
+      this.BusquedaEmitida.emit(this.nameForm.value.name.trim()); // Elimina espacios extra
+      this.nameForm.reset();
+    }
   }
-
 }

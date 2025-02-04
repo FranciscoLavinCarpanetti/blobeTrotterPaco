@@ -4,8 +4,6 @@ import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2'
 
-
-
 @Component({
   selector: 'app-form-post',
   imports: [ReactiveFormsModule],
@@ -94,11 +92,6 @@ export class FormPostComponent {
       console.warn('El formulario tiene errores, no se puede agregar el post.');
     }
   }
-
-
-
-
-
 
   chechErrorField(field: string, err: string): boolean {
     if (this.postForm.get(field)?.hasError(err) && this.postForm.get(field)?.touched) {

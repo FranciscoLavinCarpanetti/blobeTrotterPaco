@@ -30,7 +30,11 @@ export class PostsService {
   getList(): string[] {
     return this.posts.map(post => post.category);
   }
-
+  getByAuthor(authorName: string): IPost[] {
+    return this.posts.filter(post =>
+      post.author.toLowerCase().includes(authorName.toLowerCase()) // Búsqueda sin distinción de mayúsculas
+    );
+  }
 
 
 }
