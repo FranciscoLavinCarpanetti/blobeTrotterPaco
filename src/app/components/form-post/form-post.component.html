@@ -2,26 +2,46 @@
   <h1>Completa el formulario.</h1>
   <hr>
   <div class="col-12 col-lg-6 offset-0 offset-lg-3 bg-warning">
-    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="postForm" (ngSubmit)="getDataForm()">
       <div class="mb-3">
         <label for="title" class="form-label">Titulo</label>
         <input type="text" id="title" class="form-control" formControlName="title" placeholder="Introduce un titulo para tu post">
+       @if (chechErrorField('title', 'required')){
+          <p class="alert alert-danger mt-2" role="alert">
+            El campo titulo es obligatorio</p>
+          }
       </div>
       <div class="mb-3">
         <label for="text" class="form-label">Cuenta como fue tu viaje</label>
         <input type="text" id="text" class="form-control" formControlName="text" placeholder="Introduce una discripción de tu viaje no superior de 200 caracteres">
+        @if(chechErrorField('text', 'required')){
+          <p class="alert alert-danger mt-2" role="alert">
+            El campo texto es obligatorio</p>
+          }
       </div>
       <div class="mb-3">
-        <label for="autor" class="form-label">Nombres y Apellidos</label>
-        <input type="autor" id="autor" class="form-control" formControlName="autor" placeholder="Introduce tu nombre y apellido">
+        <label for="author" class="form-label">Nombres y Apellidos</label>
+        <input type="autor" id="author" class="form-control" formControlName="author" placeholder="Introduce tu nombre y apellido">
+        @if (chechErrorField('author', 'required')){
+          <p class="alert alert-danger mt-2" role="alert">
+            El campo autor es obligatorio</p>
+          }
       </div>
       <div class="mb-3">
         <label for="image" class="form-label">Imagen</label>
         <input type="text" id="image" class="form-control" formControlName="image" placeholder="Introduce una imagen que represente tu post">
+        @if (chechErrorField('image', 'required')){
+          <p class="alert alert-danger mt-2" role="alert">
+            El campo imagen es obligatorio</p>
+          }
       </div>
       <div class="mb-3">
         <label for="date" class="form-label">Fecha</label>
-        <input type="text" id="date" class="form-control" formControlName="date" placeholder="Introduce la fecha de tu post">
+        <input type="date" id="date" class="form-control" formControlName="date" placeholder="Introduce la fecha de tu post">
+        @if (chechErrorField('date', 'required')){
+          <p class="alert alert-danger mt-2" role="alert">
+            El campo fecha es obligatorio</p>
+          }
       </div>
       <div class="mb-3">
         <label for="category" class="form-label">Selecciona una categoría para tu post</label>
