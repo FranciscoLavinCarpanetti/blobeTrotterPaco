@@ -1,5 +1,6 @@
+import { PostsService } from './../../services/posts.service';
 
-import { Component } from '@angular/core';
+import { Component, inject, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select-tipo',
@@ -8,7 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './select-tipo.component.css'
 })
 export class SelectTipoComponent {
-
 
 
 }

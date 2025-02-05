@@ -36,5 +36,9 @@ export class PostsService {
     );
   }
 
+  getCategorias(): string[] {
+    return this.posts.map(post => post.category);
+  }
+
 
 }
