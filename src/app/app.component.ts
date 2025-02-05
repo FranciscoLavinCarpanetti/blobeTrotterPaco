@@ -8,7 +8,7 @@ import { NameSerchComponent } from './components/name-serch/name-serch.component
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, SelectTipoComponent,],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, SelectTipoComponent, NameSerchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

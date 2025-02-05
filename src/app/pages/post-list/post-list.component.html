@@ -1,3 +1,9 @@
+<div  class=" fs-3 offset-1">
+  <app-name-search (BusquedaEmitida)="serchByName($event)"></app-name-search>
+</div>
+<div class=" fs-3 offset-2">
+   <app-select-tipo></app-select-tipo>
+</div>
 <section class="container my-5">
    <h1>Ultimos Posts</h1>
      <hr>
@@ -7,7 +13,9 @@
                 <div class="card" style="width: 18rem;">
                   <img [src]="post.image" [alt]="post.title" class="card-img-top">
                     <div class="card-body">
-                     <h5 class="card-title">{{ post.title }}</h5>
+                     <h5 class="card-title">Titulo: <strong>{{ post.title }}</strong></h5>
+                     <hr>
+                     <p class="card-title fs-5">Autor: <strong>{{post.author}}</strong></p>
                       <hr>
                         <a [routerLink]="['/post', post.id]" class="btn btn-warning">Ver más</a>
                     </div>

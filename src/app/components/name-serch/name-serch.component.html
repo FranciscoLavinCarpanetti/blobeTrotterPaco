@@ -1,6 +1,9 @@
-<div class="my-2">
-  <!--<form class="d-flex gap-3" [formGroup]="nameForm" (ngSubmit)="getName()">
-    <input type="text" placeholder="introduce un nombre" class="form-control" formControlName="name">
-    <input type="submit" value="buscar" class="btn btn-warning">
-  </form>
-</div> <!-- Cerrado correctamente -->
+
+<div class="container">
+   <div class="row my-2 accordion-button">
+       <form class="d-flex gap-3" [formGroup]="nameForm" (ngSubmit)="getName()">
+          <input type="text" placeholder="introduce el nombre del autor del Post que buscas" class="form-control" formControlName="name">
+         <input type="submit" value="buscar" class="btn btn-warning">
+       </form>
+   </div>
+</div>

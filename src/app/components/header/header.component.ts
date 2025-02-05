@@ -4,7 +4,7 @@ import { NameSerchComponent } from '../name-serch/name-serch.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, NameSerchComponent],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
