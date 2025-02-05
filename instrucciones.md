@@ -1,103 +1,130 @@
-## BlobeTotterPaco ##
+## BlobeTrotterPaco ##
 
 Estructura del Proyecto
 
-1. Instalaciones y Configuraciones Iniciales:
+1. **Instalaciones y Configuraciones Iniciales:**
 
-    Instalar Bootstrap
-    npm install bootstrap
+    - Instalar Bootstrap:
 
-    Cargar Bootstrap en angular.json
-    "styles": [
-      "node_modules/bootstrap/dist/css/bootstrap.min.css"
-    ],
-    "scripts": [
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-    ]
-    Instalar sweetalert
-    npm install sweetalert2
+      ```bash
+      npm install bootstrap
+      ```
 
-2. Definir las Interfaces:
+    - Cargar Bootstrap en [angular.json](http://_vscodecontentref_/1):
 
-    Post (Representa una publicación en el blog)
-    export interface IPost {
-      id?: number;
-      title: string;
-      text: string;
-      author: string;
-      image: string;
-      date: string;
-      category: ICategory;
-    }
+      ```json
+      "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css"
+      ],
+      "scripts": [
+        "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      ]
+      ```
 
-    Category (Representa una categoría del blog)
-    export interface ICategory {
-      id: number;
-      title: string;
-    }
+    - Instalar SweetAlert2:
 
-3. Crear el Servicio de Posts:
+      ```bash
+      npm install sweetalert2
+      ```
 
-    Servicio: postsService
-    ng g s services/posts --skip-tests
+2. **Definir las Interfaces:**
 
-    Métodos:
+    - **Post (Representa una publicación en el blog)**
 
-        getAll() : IPost[] - Recuperar todos los posts
+      ```typescript
+      export interface IPost {
+        id?: number;
+        title: string;
+        text: string;
+        author: string;
+        image: string;
+        date: string;
+        category: ICategory;
+      }
+      ```
 
-        insert(newPost: IPost) : any - Agregar un nuevo post
+    - **Category (Representa una categoría del blog)**
 
-        getByCategoria(cat: string) : IPost[] - Filtrar por categoría
+      ```typescript
+      export enum ICategory {
+        Playa = 'Playa',
+        Montaña = 'Montaña',
+        Ciudad = 'Ciudad',
+        Rural = 'Rural',
+        Festivales = 'Festivales'
+      }
+      ```
 
-        getById(id: number) : IPost - Obtener un post por ID
+3. **Crear el Servicio de Posts:**
 
-4. Crear Componentes Necesarios:
+    - Generar el servicio:
 
-    Componente Principal
-    ng g c components/component --skip-tests
+      ```bash
+      ng g s services/posts --skip-tests
+      ```
 
-    Componentes Específicos
-    ng g c components/header --skip-tests
-    ng g c components/footer --skip-tests
-    ng g c components/formPost --skip-tests
-    ng g c components/postItem --skip-tests
-    ng g c components/nameSerch --skip-tests
-    ng g c components/selectTipo --skip-tests
+    - Métodos:
 
-    Componentes Pagina
-    ng g c pages/postList --skip-tests
-    ng g c pages/postView --skip-tests
-    ng g c pages/registo --skip-tests
-    ng g c pages/login --skip-tests
+      ```typescript
+      getAll(): IPost[]; // Recuperar todos los posts
+      getByCategory(cat: string): IPost[]; // Filtrar por categoría
+      getById(id: number): IPost; // Obtener un post por ID
+      createPost(newPost: IPost): void; // Agregar un nuevo post
+      ```
 
-5. Rutas de la Aplicación:
+4. **Crear Componentes Necesarios:**
 
-    Configurar en app-routing.module.ts
-    const routes: Routes = [
-      { path: 'home', component: PostViewComponent },
-      { path: 'new', component: FormPostComponent },
-      { path: 'post/:idpost', component: ViewPostComponent },
-      { path: 'registro', component: RegistoComponent },
-      { path: 'login', component: LoginComponent },
-      { path: '**', redirectTo: 'home' }
-    ];
+    - Componente Principal:
 
-6. Funcionalidades Clave:
+      ```bash
+      ng g c components/component --skip-tests
+      ```
 
-    Listar todas las publicaciones desde postsService en PostComponent.
+    - Componentes Específicos:
 
-    Formulario reactivo en FormPostComponent para agregar posts con validaciones.
+      ```bash
+      ng g c components/header --skip-tests
+      ng g c components/footer --skip-tests
+      ng g c components/formPost --skip-tests
+      ng g c components/postItem --skip-tests
+      ng g c components/nameSerch --skip-tests
+      ng g c components/selectTipo --skip-tests
+      ```
 
-    Visualización de un post individual en ViewPostComponent.
+    - Componentes Página:
 
-    Filtro por categorías y búsqueda por título en PostListComponent.
+      ```bash
+      ng g c pages/postList --skip-tests
+      ng g c pages/postView --skip-tests
+      ng g c pages/registro --skip-tests
+      ng g c pages/login --skip-tests
+      ```
 
-    Selector de categorías basado en un array de categorías en CategoryService.
+5. **Rutas de la Aplicación:**
 
-7. Tareas Adicionales:
+    - Configurar en `app-routing.module.ts`:
 
-    Cargar menú en HeaderComponent y gestionar rutas.
+      ```typescript
+      const routes: Routes = [
+        { path: 'home', component: PostListComponent },
+        { path: 'new', component: FormPostComponent },
+        { path: 'post/:id', component: PostViewComponent },
+        { path: 'registro', component: RegistroComponent },
+        { path: 'login', component: LoginComponent },
+        { path: '**', redirectTo: 'home' }
+      ];
+      ```
 
-    Diseñar el Blog con Bootstrap y CSS personalizado.
+6. **Funcionalidades Clave:**
 
-    Repositorio en GitHub con commits organizados por tarea.
+    - Listar todas las publicaciones desde `PostsService` en `PostListComponent`.
+    - Formulario reactivo en `FormPostComponent` para agregar posts con validaciones.
+    - Visualización de un post individual en `PostViewComponent`.
+    - Filtro por categorías y búsqueda por título en `PostListComponent`.
+    - Selector de categorías basado en un array de categorías en `SelectTipoComponent`.
+
+7. **Tareas Adicionales:**
+
+    - Cargar menú en `HeaderComponent` y gestionar rutas.
+    - Diseñar el Blog con Bootstrap y CSS personalizado.
+    - Repositorio en GitHub con commits organizados por tarea.
