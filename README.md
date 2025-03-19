@@ -2,6 +2,11 @@
 
 Este proyecto fue generado utilizando [Angular CLI](https://github.com/angular/angular-cli) versión 19.1.1.
 
+![home](https://github.com/user-attachments/assets/7ef85e10-3d1d-470e-8551-f24f7c89d30d)
+![idPost](https://github.com/user-attachments/assets/72460d89-f7df-4b72-ba63-ed79703c3102)
+![login](https://github.com/user-attachments/assets/b327293f-9ac5-4db5-bc22-9ea6a2a0868b)
+![newPost](https://github.com/user-attachments/assets/a97e4305-8ad6-4082-b53d-64961234e6f5)
+
 ## Servidor de Desarrollo
 
 Para iniciar un servidor de desarrollo local, ejecuta:
